@@ -1,4 +1,4 @@
-## 프로젝트
+## 프로젝트 HexaOracle
 
 ## Getting Started
 
