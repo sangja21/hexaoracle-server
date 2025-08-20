@@ -189,23 +189,23 @@ POST /oracles
 {
   "oracleId": "a6f9...",
   "chosen": {
-    "type": "original",          // "original" | "changed"
-    "lines": [7,8,9,7,8,8],      // 6개 효 (정수 배열)
-    "upper": "☳",                // 상괘 (팔괘 기호)
-    "lower": "☵",                // 하괘 (팔괘 기호)
-    "kingWenNo": 40,             // 문왕순서 번호 (1~64)
-    "movingLineIndexes": [3]     // 변효 위치 (1=초효, 6=상효)
+    "type": "original",          
+    "lines": [7,8,9,7,8,8],      
+    "upper": "☳",                
+    "lower": "☵",                
+    "kingWenNo": 40,             
+    "movingLineIndexes": [3]     
   },
   "interpretation": {
-    "judgement": "규율을 세우되 지나친 경직을 경계하라.",  // 괘사
-    "image": "호수 위의 물…",                             // 상(象)
-    "line_index": 3,                                       // 선택된 변효 위치
-    "line_text": "지나침과 부족함 사이의 균형을 경계하라.", // 효사 해석
-    "sources": ["Korean-Classic-v1"]                       // 해석 출처
+    "judgement": "규율을 세우되 지나친 경직을 경계하라.",  
+    "image": "호수 위의 물…",                             
+    "line_index": 3,                                       
+    "line_text": "지나침과 부족함 사이의 균형을 경계하라.", 
+    "sources": ["Korean-Classic-v1"],                      
+    "aiCommentary": "당신이 처한 상황은 억눌림보다는 해소가 필요한 때입니다. 규칙을 지키되 지나친 억제는 피하고, 사람들과의 관계에서 열린 태도를 유지하는 것이 좋습니다." 
   },
   "createdAt": "2025-08-20T07:00:00Z"
 }
-
 ```
 
 > 주: `upper/lower`는 예시. 실제 번호/팔괘 매핑은 구현 테이블 기준으로 채움.
@@ -246,16 +246,18 @@ POST /oracles
  + toChanged(): Line
 
 [Interpretation] <Entity>
- - id: InterpretationId
- - oracleId: OracleId
- - judgement: string
- - image: string
- - line_index: int          // 선택된 변효 위치 (없으면 null)
- - line_text: string        // 해당 효사 해석
- - sources: [string]        // 해석 출처
- - locale: string
- - version: string
- + render(): InterpretationText
+- id: InterpretationId
+- oracleId: OracleId
+- judgement: string
+- image: string
+- line_index: int          // 선택된 변효 위치 (없으면 null)
+- line_text: string        // 해당 효사 해석
+- sources: [string]        // 해석 출처
+- locale: string
+- version: string
+- aiCommentary: string     // AI 해설
++ render(): InterpretationText
+
 ```
 
 ---
