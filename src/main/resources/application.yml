@@ -1,6 +1,6 @@
 spring:
   application:
-    name: hhplus
+    name: hexaoracle
   profiles:
     active: local
   datasource:
