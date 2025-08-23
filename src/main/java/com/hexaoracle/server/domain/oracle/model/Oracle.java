@@ -1,15 +1,14 @@
 package com.hexaoracle.server.domain.oracle.model;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 public class Oracle {
     private final OracleId id;
     private final Question question;
     private final Lines lines;
-    private final Hexagram originalHexagram;
-    private final Hexagram changedHexagram; // nullable
-    private final Set<Integer> movingLineIndexes;
+    private final String originalBinary;
+    private final String changedBinary; // nullable
+    private final CenterLineResult centerLineResult;
     private final LocalDateTime createdAt;
     private final String locale;
     private final Long userId; // nullable
@@ -17,18 +16,18 @@ public class Oracle {
     public Oracle(OracleId id,
                   Question question,
                   Lines lines,
-                  Hexagram originalHexagram,
-                  Hexagram changedHexagram,
-                  Set<Integer> movingLineIndexes,
+                  String originalBinary,
+                  String changedBinary,
+                  CenterLineResult centerLineResult,
                   LocalDateTime createdAt,
                   String locale,
                   Long userId) {
         this.id = id;
         this.question = question;
         this.lines = lines;
-        this.originalHexagram = originalHexagram;
-        this.changedHexagram = changedHexagram;
-        this.movingLineIndexes = movingLineIndexes;
+        this.originalBinary = originalBinary;
+        this.changedBinary = changedBinary;
+        this.centerLineResult = centerLineResult;
         this.createdAt = createdAt;
         this.locale = locale;
         this.userId = userId;
@@ -46,16 +45,16 @@ public class Oracle {
         return lines;
     }
 
-    public Hexagram getOriginalHexagram() {
-        return originalHexagram;
+    public String getOriginalBinary() {
+        return originalBinary;
     }
 
-    public Hexagram getChangedHexagram() {
-        return changedHexagram;
+    public String getChangedBinary() {
+        return changedBinary;
     }
 
-    public Set<Integer> getMovingLineIndexes() {
-        return movingLineIndexes;
+    public CenterLineResult getCenterLineResult() {
+        return centerLineResult;
     }
 
     public LocalDateTime getCreatedAt() {
