@@ -1,11 +1,11 @@
 package com.hexaoracle.server.adapter.web.oracle;
 
+import com.hexaoracle.server.api.common.dto.ApiResponse;
 import com.hexaoracle.server.application.oracle.CreateOracleUseCase;
+import com.hexaoracle.server.domain.oracle.model.Line;
 import com.hexaoracle.server.domain.oracle.model.Oracle;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.hexaoracle.server.domain.oracle.model.Line;
-
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class OracleController {
     }
 
     @PostMapping
-    public ResponseEntity<OracleResponse> createOracle(@RequestBody OracleRequest request) {
+    public ResponseEntity<ApiResponse<OracleResponse>> createOracle(@RequestBody OracleRequest request) {
         Oracle oracle = createOracleUseCase.execute(
                 request.lines(),
                 request.question(),
@@ -28,7 +28,12 @@ public class OracleController {
                 request.userId()
         );
 
-        return ResponseEntity.ok(OracleResponse.from(oracle));
+        OracleResponse response = OracleResponse.from(oracle);
+
+        // ApiResponse.success()로 감싸서 반환
+        return ResponseEntity
+                .status(201)
+                .body(ApiResponse.success(response));
     }
 
     // --- Request DTO ---

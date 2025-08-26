@@ -19,7 +19,7 @@ class OracleApiTest {
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("POST /oracles 정상 입력 시 점괘가 생성된다")
+    @DisplayName("POST /api/v1/oracles 정상 입력 시 점괘가 생성된다")
     void createOracle_success() throws Exception {
         String requestBody = """
         {
@@ -30,16 +30,21 @@ class OracleApiTest {
         """;
 
         mockMvc.perform(
-                        post("/oracles")
+                        post("/api/v1/oracles")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .header("Authorization", "Bearer dummy-token")
                                 .content(requestBody)
                 )
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.oracleId").exists())
-                .andExpect(jsonPath("$.chosen.lines").isArray())
-                .andExpect(jsonPath("$.chosen.lines.length()").value(6))
-                .andExpect(jsonPath("$.interpretation").exists());
+                .andExpect(jsonPath("$.status").value(201))
+                .andExpect(jsonPath("$.message").value("success"))
+                .andExpect(jsonPath("$.data.oracleId").exists())
+                .andExpect(jsonPath("$.data.lines").isArray())
+                .andExpect(jsonPath("$.data.lines.length()").value(6))
+                .andExpect(jsonPath("$.data.originalBinary").exists())
+                .andExpect(jsonPath("$.data.changedBinary").exists())
+                .andExpect(jsonPath("$.data.centerLine").exists())
+                .andExpect(jsonPath("$.data.locale").value("ko-KR"))
+                .andExpect(jsonPath("$.data.createdAt").exists());
     }
 }
-
