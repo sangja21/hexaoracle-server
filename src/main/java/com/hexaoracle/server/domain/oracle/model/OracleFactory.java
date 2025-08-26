@@ -1,6 +1,8 @@
-package com.hexaoracle.server.domain.oracle.service;
+package com.hexaoracle.server.domain.oracle.model;
 
-import com.hexaoracle.server.domain.oracle.model.*;
+import com.hexaoracle.server.domain.oracle.service.CenterLineService;
+import com.hexaoracle.server.domain.oracle.service.ChangedHexagramService;
+import com.hexaoracle.server.domain.oracle.service.HexagramService;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
