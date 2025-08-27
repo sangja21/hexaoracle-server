@@ -2,7 +2,7 @@ package com.hexaoracle.server.common.error;
 
 import java.util.List;
 
-public class PgroblemDetails {
+public class ProblemDetails {
     private String code;          // 에러 코드 (예: INVALID_LINES)
     private String message;       // 사람이 읽기 좋은 메시지
     private List<Detail> details; // 필드별 세부 오류 (옵션)
