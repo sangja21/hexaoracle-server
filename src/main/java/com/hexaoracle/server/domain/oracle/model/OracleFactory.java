@@ -3,10 +3,12 @@ package com.hexaoracle.server.domain.oracle.model;
 import com.hexaoracle.server.domain.oracle.service.CenterLineService;
 import com.hexaoracle.server.domain.oracle.service.ChangedHexagramService;
 import com.hexaoracle.server.domain.oracle.service.HexagramService;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Component
 public class OracleFactory {
 
     private final HexagramService hexagramService = new HexagramService();

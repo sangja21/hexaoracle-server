@@ -1,9 +1,11 @@
 package com.hexaoracle.server.application.oracle;
 
 import com.hexaoracle.server.domain.oracle.model.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service   // 스프링 빈 등록
 public class CreateOracleUseCase {
 
     private final OracleFactory oracleFactory;
