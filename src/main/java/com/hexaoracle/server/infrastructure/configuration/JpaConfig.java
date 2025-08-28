@@ -1,5 +1,7 @@
 package com.hexaoracle.server.infrastructure.configuration;
 
+import jakarta.persistence.EntityManagerFactory;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
@@ -9,11 +11,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @EnableJpaAuditing
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = "com.hexaoracle.server.infrastructure.persistence")
+@EntityScan(basePackages = "com.hexaoracle.server.infrastructure.persistence")
 public class JpaConfig {
 
     @Bean
-    public PlatformTransactionManager transactionManager() {
-        return new JpaTransactionManager();
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+        return new JpaTransactionManager(emf);
     }
 }
