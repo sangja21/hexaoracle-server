@@ -1,4 +1,4 @@
-package com.hexaoracle.server.config.jpa;
+package com.hexaoracle.server.infrastructure.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
