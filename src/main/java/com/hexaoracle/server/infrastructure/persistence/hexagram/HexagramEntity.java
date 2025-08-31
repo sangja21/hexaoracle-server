@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Table(
         name = "hexagram",
         indexes = {
-                @Index(name = "idx_hexagram_binary", columnList = "binary")
+                @Index(name = "idx_hexagram_lines_bits", columnList = "lines_bits")
         }
 )
 @Getter
@@ -28,8 +28,8 @@ public class HexagramEntity {
     @Column(name = "name_en", length = 32, nullable = false)
     private String nameEn;
 
-    @Column(name = "binary", length = 6, nullable = false)
-    private String binary;  // "111000" 형식, 하→상
+    @Column(name = "lines_bits", length = 6, nullable = false)
+    private String linesBits;  // "111000" 형식, 하→상
 
     @Column(name = "upper_trigram", length = 4, nullable = false)
     private String upperTrigram;
