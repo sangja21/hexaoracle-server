@@ -8,9 +8,9 @@ INSERT INTO hexaoracle.hexagram (id,image,judgement,lines_bits,lower_trigram,nam
 	 (4,NULL,'Youthful ignorance. Favorable to seek guidance.
 ','100010','kan','Meng','몽','蒙','gen'),
 	 (5,NULL,'Waiting with truth. Success. Perseverance brings fortune.
-','010111','qian','Xu','수','需','kan'),
+','111010','qian','Xu','수','需','kan'),
 	 (6,NULL,'Conflict. Sincere and cautious. Some success, some misfortune.
-','111010','kan','Song','송','訟','qian'),
+','010111','kan','Song','송','訟','qian'),
 	 (7,NULL,'The Army. Perseverance brings good fortune. No blame.
 ','000010','kan','Shi','사','師','kun'),
 	 (8,NULL,'Union. Good fortune. Success in perseverance.
@@ -25,7 +25,7 @@ INSERT INTO hexaoracle.hexagram (id,image,judgement,lines_bits,lower_trigram,nam
 	 (12,NULL,'Standstill. No advance. Perseverance brings misfortune.
 ','000111','qian','Pi','비','否','kun'),
 	 (13,NULL,'Fellowship with men in the open. Success.
-','010111','li','Tong Ren','동인','同人','qian'),
+','101111','li','Tong Ren','동인','同人','qian'),
 	 (14,NULL,'Great possession. Supreme success.
 ','111101','qian','Da You','대유','大有','li'),
 	 (15,NULL,'Modesty. Success. Perseverance brings honor.
@@ -73,7 +73,7 @@ INSERT INTO hexaoracle.hexagram (id,image,judgement,lines_bits,lower_trigram,nam
 	 (35,NULL,'Progress. The powerful prince is honored. Success.
 ','000101','kun','Jin','진','晉','li'),
 	 (36,NULL,'Darkening of the light. Perseverance brings adversity.
-','001000','li','Ming Yi','명이','明夷','kun'),
+','101000','li','Ming Yi','명이','明夷','kun'),
 	 (37,NULL,'The family. Success. Perseverance brings good fortune.
 ','101011','li','Jia Ren','가인','家人','xun'),
 	 (38,NULL,'Opposition. Small success. Perseverance furthers.
@@ -123,7 +123,7 @@ INSERT INTO hexaoracle.hexagram (id,image,judgement,lines_bits,lower_trigram,nam
 	 (59,NULL,'Dispersion. Success. Perseverance furthers. Favorable to cross the great river.
 ','010011','kan','Huan','환','渙','xun'),
 	 (60,NULL,'Limitation. Success. Perseverance furthers.
-','011010','dui','Jie','절','節','kan');
+','110010','dui','Jie','절','節','kan');
 INSERT INTO hexaoracle.hexagram (id,image,judgement,lines_bits,lower_trigram,name_en,name_ko,name_zh,upper_trigram) VALUES
 	 (61,NULL,'Inner truth. Success. Perseverance furthers.
 ','110011','dui','Zhong Fu','중부','中孚','xun'),
