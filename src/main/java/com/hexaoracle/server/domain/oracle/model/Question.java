@@ -10,4 +10,8 @@ public record Question(String text) {
         }
         // TODO: 금칙어/PII 필터
     }
+
+    public String getValue() {
+        return text;
+    }
 }

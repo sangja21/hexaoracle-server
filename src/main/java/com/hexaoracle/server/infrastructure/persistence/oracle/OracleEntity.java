@@ -3,12 +3,15 @@ package com.hexaoracle.server.infrastructure.persistence.oracle;
 import com.hexaoracle.server.infrastructure.persistence.hexagram.HexagramEntity;
 import com.hexaoracle.server.infrastructure.persistence.user.UserEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
 @Entity
 @Table(
         name = "oracle",
@@ -20,6 +23,7 @@ import java.time.LocalDateTime;
         }
 )
 @Getter
+@Setter
 @NoArgsConstructor
 public class OracleEntity {
 

@@ -22,4 +22,8 @@ public record Line(int value) {
             default -> this;
         };
     }
+
+    public Object getValue() {
+        return value;
+    }
 }

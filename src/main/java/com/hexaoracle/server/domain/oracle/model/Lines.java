@@ -1,5 +1,8 @@
 package com.hexaoracle.server.domain.oracle.model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -9,6 +12,8 @@ import java.util.Objects;
  * - 하효(index=0) → 상효(index=5) 순서
  */
 public record Lines(List<Line> values) {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     public Lines {
         Objects.requireNonNull(values, "lines cannot be null");
@@ -49,5 +54,27 @@ public record Lines(List<Line> values) {
     @Override
     public String toString() {
         return "Lines{" + toBinary() + "}";
+    }
+
+    /** JSON 직렬화 (예: [6,7,8,9,7,6]) */
+    public String toJson() {
+        try {
+            List<Integer> ints = values.stream()
+                    .map(Line::getValue)
+                    .toList();
+            return MAPPER.writeValueAsString(ints);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Failed to serialize Lines to JSON", e);
+        }
+    }
+
+    /** JSON 역직렬화 */
+    public static Lines fromJson(String json) {
+        try {
+            List<Integer> ints = MAPPER.readValue(json, MAPPER.getTypeFactory().constructCollectionType(List.class, Integer.class));
+            return new Lines(ints.stream().map(Line::new).toList());
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to deserialize Lines from JSON", e);
+        }
     }
 }
