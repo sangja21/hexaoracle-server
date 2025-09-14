@@ -23,7 +23,7 @@ public record Line(int value) {
         };
     }
 
-    public Object getValue() {
+    public int getValue() {
         return value;
     }
 }

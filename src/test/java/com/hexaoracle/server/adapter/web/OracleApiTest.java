@@ -1,4 +1,4 @@
-package com.hexaoracle.server.domain.oracle;
+package com.hexaoracle.server.adapter.web;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -31,7 +31,7 @@ public class OracleFactory {
 
         // (4) Oracle Aggregate 조립
         return new Oracle(
-                new OracleId(UUID.randomUUID()),
+                new OracleId(System.currentTimeMillis()),
                 question,
                 lines,
                 originalBinary,        // 본괘 binary
