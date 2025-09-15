@@ -14,7 +14,7 @@ public final class Hexagram {
     private final Trigram lower;   // lines[1..3]에서 파생
     private final int kingWenNo;   // 1..64 범위
 
-    private Hexagram(Lines lines, Trigram upper, Trigram lower, int kingWenNo) {
+    public Hexagram(Lines lines, Trigram upper, Trigram lower, int kingWenNo) {
         this.lines = Objects.requireNonNull(lines, "lines cannot be null");
         this.upper = Objects.requireNonNull(upper, "upper cannot be null");
         this.lower = Objects.requireNonNull(lower, "lower cannot be null");
@@ -41,6 +41,11 @@ public final class Hexagram {
 
         return new Hexagram(lines, upper, lower, kingWenNo);
     }
+
+    public static Hexagram fromPersistence(Lines lines, Trigram upper, Trigram lower, int kingWenNo) {
+        return new Hexagram(lines, upper, lower, kingWenNo);
+    }
+
 
     public Lines getLines() {
         return lines;

@@ -44,4 +44,5 @@ public class HexagramEntity {
     @Lob
     @Column(name = "image")
     private String image;
+    
 }
