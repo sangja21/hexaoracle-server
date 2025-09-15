@@ -1,5 +1,7 @@
 package com.hexaoracle.server.domain.oracle.model;
 
+import com.hexaoracle.server.domain.hexagram.model.Lines;
+
 import java.time.LocalDateTime;
 
 public class Oracle {

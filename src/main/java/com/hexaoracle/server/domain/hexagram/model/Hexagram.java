@@ -1,4 +1,4 @@
-package com.hexaoracle.server.domain.oracle.model;
+package com.hexaoracle.server.domain.hexagram.model;
 
 import java.util.Objects;
 

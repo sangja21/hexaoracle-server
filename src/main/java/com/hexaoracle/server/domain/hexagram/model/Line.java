@@ -1,4 +1,4 @@
-package com.hexaoracle.server.domain.oracle.model;
+package com.hexaoracle.server.domain.hexagram.model;
 
 public record Line(int value) {
     public Line {

@@ -2,7 +2,7 @@ package com.hexaoracle.server.adapter.web.oracle;
 
 import com.hexaoracle.server.api.common.dto.ApiResponse;
 import com.hexaoracle.server.application.oracle.CreateOracleUseCase;
-import com.hexaoracle.server.domain.oracle.model.Line;
+import com.hexaoracle.server.domain.hexagram.model.Line;
 import com.hexaoracle.server.domain.oracle.model.Oracle;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

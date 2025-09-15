@@ -1,5 +1,7 @@
 package com.hexaoracle.server.application.oracle;
 
+import com.hexaoracle.server.domain.hexagram.model.Line;
+import com.hexaoracle.server.domain.hexagram.model.Lines;
 import com.hexaoracle.server.domain.oracle.model.*;
 import org.springframework.stereotype.Service;
 

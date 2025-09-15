@@ -15,9 +15,10 @@ public class HexagramController {
 
     @GetMapping
     public ResponseEntity<ApiResponse<Map<String, List<Integer>>>> getAll() {
-        Map<String, List<Integer>> body = Map.of("items", List.of(7, 8, 9, 6, 7, 8));
+        Map<String, List<Integer>> body = Map.of("items", List.of());
         return ResponseEntity.ok(ApiResponse.success(body));
     }
+
 }
 
 

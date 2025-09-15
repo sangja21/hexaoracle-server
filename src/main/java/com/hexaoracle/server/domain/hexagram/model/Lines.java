@@ -1,4 +1,4 @@
-package com.hexaoracle.server.domain.oracle.model;
+package com.hexaoracle.server.domain.hexagram.model;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

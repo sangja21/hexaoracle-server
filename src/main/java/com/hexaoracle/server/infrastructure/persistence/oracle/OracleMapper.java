@@ -1,11 +1,9 @@
 package com.hexaoracle.server.infrastructure.persistence.oracle;
 
-import com.hexaoracle.server.domain.oracle.model.Lines;
+import com.hexaoracle.server.domain.hexagram.model.Lines;
 import com.hexaoracle.server.domain.oracle.model.Oracle;
 import com.hexaoracle.server.domain.oracle.model.OracleId;
 import com.hexaoracle.server.domain.oracle.model.Question;
-import com.hexaoracle.server.infrastructure.persistence.hexagram.HexagramEntity;
-import com.hexaoracle.server.infrastructure.persistence.user.UserEntity;
 import org.springframework.stereotype.Component;
 
 @Component

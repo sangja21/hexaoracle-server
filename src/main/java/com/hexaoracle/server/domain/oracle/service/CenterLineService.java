@@ -2,7 +2,7 @@ package com.hexaoracle.server.domain.oracle.service;
 
 import com.hexaoracle.server.domain.oracle.model.CenterHexagram;
 import com.hexaoracle.server.domain.oracle.model.CenterLineResult;
-import com.hexaoracle.server.domain.oracle.model.Lines;
+import com.hexaoracle.server.domain.hexagram.model.Lines;
 
 import java.util.Set;
 import java.util.TreeSet;

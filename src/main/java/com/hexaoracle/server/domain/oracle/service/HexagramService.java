@@ -1,6 +1,6 @@
 package com.hexaoracle.server.domain.oracle.service;
 
-import com.hexaoracle.server.domain.oracle.model.Lines;
+import com.hexaoracle.server.domain.hexagram.model.Lines;
 
 public class HexagramService {
 
