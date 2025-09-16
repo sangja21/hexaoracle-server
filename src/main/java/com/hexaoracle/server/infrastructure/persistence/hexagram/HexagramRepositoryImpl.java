@@ -30,4 +30,23 @@ public class HexagramRepositoryImpl implements HexagramRepository {
                 ))
                 .toList();
     }
+
+    @Override
+    public List<HexagramDto> findByCriteria(String q, String locale, String cursor, int limit) {
+        Integer cursorVal = (cursor != null) ? Integer.valueOf(cursor) : null;
+
+        return jpaRepository.findByCriteria(q, locale, cursorVal, limit).stream()
+                .map(e -> new HexagramDto(
+                        e.getId(),
+                        e.getNameKo(),
+                        e.getNameEn(),
+                        e.getNameZh(),
+                        e.getLinesBits(),
+                        e.getUpperTrigram(),
+                        e.getLowerTrigram(),
+                        e.getJudgement(),
+                        e.getImage()
+                ))
+                .toList();
+    }
 }
