@@ -1,9 +1,14 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/hexaoracle?characterEncoding=UTF-8&serverTimezone=UTC
-    username: application
-    password: application
+    url: ${TEST_DB_URL}
+    username: ${TEST_DB_USERNAME}
+    password: ${TEST_DB_PASSWORD}
+
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create-drop   # 테스트는 보통 매번 DB 스키마 리셋
+    properties:
+      hibernate.timezone.default_storage: NORMALIZE_UTC
+      hibernate.jdbc.time_zone: UTC
+    show-sql: true
