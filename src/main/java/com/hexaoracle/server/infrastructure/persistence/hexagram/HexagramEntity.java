@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(
         name = "hexagram",
@@ -44,5 +46,8 @@ public class HexagramEntity {
     @Lob
     @Column(name = "image")
     private String image;
-    
+
+    // ✅ 라인 연관관계 추가
+    @OneToMany(mappedBy = "hexagram", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<HexagramLineEntity> lines;
 }

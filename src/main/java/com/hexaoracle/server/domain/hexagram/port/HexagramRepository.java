@@ -1,8 +1,10 @@
 // domain/hexagram/port/HexagramRepository.java
 package com.hexaoracle.server.domain.hexagram.port;
 
+import com.hexaoracle.server.application.hexagram.dto.HexagramDetailDto;
 import com.hexaoracle.server.application.hexagram.dto.HexagramDto;
 import java.util.List;
+import java.util.Optional;
 
 
 public interface HexagramRepository {
@@ -18,4 +20,13 @@ public interface HexagramRepository {
      * @return HexagramDto 목록
      */
     List<HexagramDto> findByCriteria(String q, String locale, String cursor, int limit);
+
+    /**
+     * 단일 괘 조회
+     *
+     * @param no 괘 번호 (1~64)
+     * @param locale 로케일 (ko|en)
+     * @return 해당 HexagramDto, 없으면 Optional.empty()
+     */
+    Optional<HexagramDetailDto> findByNo(short no, String locale);
 }

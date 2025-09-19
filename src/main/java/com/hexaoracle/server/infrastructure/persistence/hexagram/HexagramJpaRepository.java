@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-public interface HexagramJpaRepository extends JpaRepository<HexagramEntity, Long> {
+public interface HexagramJpaRepository extends JpaRepository<HexagramEntity, Short> {
 
     @Query(value = """
         SELECT * 
@@ -29,5 +29,12 @@ public interface HexagramJpaRepository extends JpaRepository<HexagramEntity, Lon
             @Param("cursor") Integer cursor,
             @Param("limit") int limit
     );
+
+    @Query(value = """
+        SELECT * 
+        FROM hexagram h
+        WHERE h.id = :no
+        """, nativeQuery = true)
+    HexagramEntity findByNo(@Param("no") short no);
 }
 

@@ -4,6 +4,7 @@ import com.hexaoracle.server.api.common.dto.ApiResponse;
 import com.hexaoracle.server.application.oracle.CreateOracleUseCase;
 import com.hexaoracle.server.domain.hexagram.model.Line;
 import com.hexaoracle.server.domain.oracle.model.Oracle;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,9 +32,8 @@ public class OracleController {
         OracleResponse response = OracleResponse.from(oracle);
 
         // ApiResponse.success()로 감싸서 반환
-        return ResponseEntity
-                .status(201)
-                .body(ApiResponse.success(response));
+        return ApiResponse.success(HttpStatus.CREATED.value(), response);
+
     }
 
     // --- Request DTO ---
